@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de la Facultad de Medicina</title>
+    
+    <!-- Fuentes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: url('imagenes/fachada.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-bottom: 3px solid #fff;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-bottom: 3px solid #fff;
+            text-align: center;
+        }
+
+        .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header-logo {
+    position: absolute;
+    left: 20px; /* Posiciona el logo de la universidad en la esquina izquierda */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+    background: white;
+    padding: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.header-logo-medicina {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    width: 120px; /* Hace el logo más grande */
+    height: auto;
+    border-radius: 5px;
+    background: white;
+    padding: 5px;
+    margin-bottom: 5%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+        .header-text {
+            text-align: center;
+            width: 100%;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Fondo negro traslúcido */
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Sombra ligera para resaltar */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: white;
+    background: rgba(0, 0, 0, 0.8); /* Fondo negro traslúcido */
+    padding: 12px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 30px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Sombra ligera */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    color: white;
+}
+
+        .container {
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .image-container, .sub-image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .image-container img, .sub-image-container img {
+            width: 50%;
+            max-width: 200px;
+            height: auto;
+            margin: 5px;
+            margin-top: 40px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 3px solid white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+        }
+        .image-container img:hover, .sub-image-container img:hover {
+            transform: scale(1.05);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .popup img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .popup-content {
+            text-align: left;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .close-btn, .back-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: burlywood;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        figure {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: fit-content;
+    padding-bottom: 40px; /* Espacio extra debajo de la imagen para el título */
+}
+
+
+        figcaption {
+    position: absolute;
+    bottom: -30px; /* Ajusta la posición más abajo */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    border-radius: 7px;
+    font-size: 1.2em;
+    text-align: center;
+    width: 90%;
+    max-width: 200px;
+}
+
+
+
+        figure img {
+    display: block;
+    width: 100%;
+    max-width: 250px; /* Aumentado a 250px como querías */
+    border-radius: 10px;
+}
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Espacio entre los logos */
+}
+
+.footer-container img {
+    max-width: 150px; /* Asegura que los logos tengan el mismo tamaño */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 5px; /* Suaviza los bordes */
+    background: white; /* Fondo blanco para resaltar los logos */
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+    </style>
+</head>
+<header>
+    <div class="header-container">
+        <div class="header-text">
+            <h1>Historia de la Facultad de Medicina</h1>
+            <p>Haz clic en la imagen para descubrir más.</p>
+        </div>
+        <img src="imagenes/logo_medicina.jpg" alt="Logo Facultad de Medicina" class="header-logo-medicina">
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <h2>Detalles de la Facultad</h2>
+        <div class="image-container" id="subImages">
+            <figure>
+            <img src="imagenes/fachada.jpg" alt="Imagen 1" onclick="showSubImages('subImages1')">
+            <figcaption>Fachada Principal</figcaption>
+        </figure>
+            <figure>
+            <img src="imagenes/fachada.jpg" alt="Imagen 2" onclick="openPopup()">
+            <figcaption>Detalle Arquitectónico</figcaption>
+        </figure>
+            <figure>
+            <img src="imagenes/fachada.jpg" alt="Imagen 3" onclick="openPopup()">
+            <figcaption>Vista Lateral</figcaption>
+        </figure>
+            <figure>
+            <img src="imagenes/fachada.jpg" alt="Imagen 4" onclick="openPopup()">
+            <figcaption>Entrada Principal</figcaption>
+        </figure>
+        </div>
+
+        
+        <div class="sub-image-container" id="subImages1" style="display: none;">
+            <h2>Elementos arquitectónicos destacados</h2>
+            <button class="back-btn" onclick="goBack()">Volver Atrás</button>
+            <figure>
+            <img src="imagenes/circulo.jpg" alt="Sub Imagen 1A" onclick="openPopup()">
+            <figcaption>Detalle del Patio</figcaption>
+        </figure>
+            <figure>
+            <img src="imagenes/circulo.jpg" alt="Sub Imagen 1B" onclick="openPopup()">
+            <figcaption>Columna Histórica</figcaption>
+        </figure>
+            <figure>
+            <img src="imagenes/circulo.jpg" alt="Sub Imagen 1C" onclick="openPopup()">
+            <figcaption>Escudo de la Facultad</figcaption>
+        </figure>
+            <figure>
+            <img src="imagenes/circulo.jpg" alt="Sub Imagen 1D" onclick="openPopup()">
+            <figcaption>Detalle de la Puerta</figcaption>
+        </figure>
+        </div>
+    </div>
+
+   <div class="popup" id="popup" style="display: none;">
+        <img id="popupImage" src="" alt="Imagen en Explicación">
+        <div class="popup-content" id="popupContent"></div>
+        <button class="close-btn" onclick="closePopup()">Cerrar</button>
+    </div>
+
+    <script>
+        function showSubImages(id) {
+            document.getElementById("subImages").style.display = "none";
+            document.getElementById(id).style.display = "flex";
+        }
+        
+        function goBack() {
+            document.getElementById("subImages1").style.display = "none";
+            document.getElementById("subImages").style.display = "flex";
+        }
+        
+        function openPopup(info, imageSrc) {
+    let content = {
+        info1a: `<p>Descripción de la sub imagen 1A.</p>
+                 <img src="imagenes/sub1a.jpg" alt="Sub imagen 1A" class="popup-extra-img">`,
+
+        info1b: `<p>Explicación sobre la sub imagen 1B.</p>
+                 <img src="imagenes/sub1b.jpg" alt="Sub imagen 1B" class="popup-extra-img">`,
+
+        info1c: `<p>Historia de la sub imagen 1C.</p>
+                 <img src="imagenes/sub1c.jpg" alt="Sub imagen 1C" class="popup-extra-img">`,
+
+        info1d: `<p>Detalles de la sub imagen 1D.</p>
+                 <img src="imagenes/sub1d.jpg" alt="Sub imagen 1D" class="popup-extra-img">`,
+
+        info2: `<p>Explicación de la imagen 2.</p>
+                <img src="imagenes/img2_extra.jpg" alt="Imagen extra 2" class="popup-extra-img">`,
+
+        info3: `<p>Historia de la imagen 3.</p>
+                <img src="imagenes/img3_extra.jpg" alt="Imagen extra 3" class="popup-extra-img">`,
+
+        info4: `<p>Detalles sobre la imagen 4.</p>
+                <img src="imagenes/img4_extra.jpg" alt="Imagen extra 4" class="popup-extra-img">`
+    };
+
+    document.getElementById("popupImage").src = imageSrc;
+    document.getElementById("popupContent").innerHTML = content[info]; // Inserta el contenido con imagen y texto
+    document.getElementById("popup").style.display = "flex";
+}
+function closePopup() {
+    document.getElementById("popup").style.display = "none"; // Oculta el pop-up
+    document.getElementById("popupImage").src = ""; // Limpia la imagen
+    document.getElementById("popupContent").innerHTML = ""; // Limpia el contenido
+}
+
+    </script>
+</body>
+<footer>
+    <div class="footer-container">
+        <img src="imagenes/logo_universidad.png">
+        <img src="imagenes/logo_filosofia.png">
+    </div>
+</footer>
+</html>
