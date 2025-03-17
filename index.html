@@ -242,46 +242,46 @@ footer {
 <body>
     <div class="container">
         <h2>Detalles de la Facultad</h2>
-        <div class="image-container" id="subImages">
-            <figure>
-            <img src="imagenes/fachada.jpg" alt="Imagen 1" onclick="showSubImages('subImages1')">
-            <figcaption>Fachada Principal</figcaption>
-        </figure>
-            <figure>
-            <img src="imagenes/fachada.jpg" alt="Imagen 2" onclick="openPopup()">
-            <figcaption>Detalle Arquitectónico</figcaption>
-        </figure>
-            <figure>
-            <img src="imagenes/fachada.jpg" alt="Imagen 3" onclick="openPopup()">
-            <figcaption>Vista Lateral</figcaption>
-        </figure>
-            <figure>
-            <img src="imagenes/fachada.jpg" alt="Imagen 4" onclick="openPopup()">
-            <figcaption>Entrada Principal</figcaption>
-        </figure>
-        </div>
+       <div class="image-container" id="subImages">
+    <figure>
+        <img src="imagenes/fachada.jpg" alt="Imagen 1" onclick="showSubImages('subImages1')">
+        <figcaption>Fachada Principal</figcaption>
+    </figure>
+    <figure>
+        <img src="imagenes/fachada.jpg" alt="Imagen 2" onclick="openPopup('info2', 'imagenes/fachada.jpg')">
+        <figcaption>Detalle Arquitectónico</figcaption>
+    </figure>
+    <figure>
+        <img src="imagenes/fachada.jpg" alt="Imagen 3" onclick="openPopup('info3', 'imagenes/fachada.jpg')">
+        <figcaption>Vista Lateral</figcaption>
+    </figure>
+    <figure>
+        <img src="imagenes/fachada.jpg" alt="Imagen 4" onclick="openPopup('info4', 'imagenes/fachada.jpg')">
+        <figcaption>Entrada Principal</figcaption>
+    </figure>
+</div>
 
-        
-        <div class="sub-image-container" id="subImages1" style="display: none;">
-            <h2>Elementos arquitectónicos destacados</h2>
-            <button class="back-btn" onclick="goBack()">Volver Atrás</button>
-            <figure>
-            <img src="imagenes/circulo.jpg" alt="Sub Imagen 1A" onclick="openPopup()">
-            <figcaption>Detalle del Patio</figcaption>
-        </figure>
-            <figure>
-            <img src="imagenes/circulo.jpg" alt="Sub Imagen 1B" onclick="openPopup()">
-            <figcaption>Columna Histórica</figcaption>
-        </figure>
-            <figure>
-            <img src="imagenes/circulo.jpg" alt="Sub Imagen 1C" onclick="openPopup()">
-            <figcaption>Escudo de la Facultad</figcaption>
-        </figure>
-            <figure>
-            <img src="imagenes/circulo.jpg" alt="Sub Imagen 1D" onclick="openPopup()">
-            <figcaption>Detalle de la Puerta</figcaption>
-        </figure>
-        </div>
+<div class="sub-image-container" id="subImages1" style="display: none;">
+    <h2>Elementos arquitectónicos destacados</h2>
+    <button class="back-btn" onclick="goBack()">Volver Atrás</button>
+    <figure>
+        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1A" onclick="openPopup('info1a', 'imagenes/circulo.jpg')">
+        <figcaption>Detalle del Patio</figcaption>
+    </figure>
+    <figure>
+        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1B" onclick="openPopup('info1b', 'imagenes/circulo.jpg')">
+        <figcaption>Columna Histórica</figcaption>
+    </figure>
+    <figure>
+        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1C" onclick="openPopup('info1c', 'imagenes/circulo.jpg')">
+        <figcaption>Escudo de la Facultad</figcaption>
+    </figure>
+    <figure>
+        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1D" onclick="openPopup('info1d', 'imagenes/circulo.jpg')">
+        <figcaption>Detalle de la Puerta</figcaption>
+    </figure>
+</div>
+
     </div>
 
    <div class="popup" id="popup" style="display: none;">
@@ -303,32 +303,26 @@ footer {
         
         function openPopup(info, imageSrc) {
     let content = {
-        info1a: `<p>Descripción de la sub imagen 1A.</p>
-                 <img src="imagenes/sub1a.jpg" alt="Sub imagen 1A" class="popup-extra-img">`,
+        info1a: `<p>Descripción de la sub imagen 1A.</p>`,
 
-        info1b: `<p>Explicación sobre la sub imagen 1B.</p>
-                 <img src="imagenes/sub1b.jpg" alt="Sub imagen 1B" class="popup-extra-img">`,
+        info1b: `<p>Explicación sobre la sub imagen 1B.</p>`,
 
-        info1c: `<p>Historia de la sub imagen 1C.</p>
-                 <img src="imagenes/sub1c.jpg" alt="Sub imagen 1C" class="popup-extra-img">`,
+        info1c: `<p>Historia de la sub imagen 1C.</p>`,
 
-        info1d: `<p>Detalles de la sub imagen 1D.</p>
-                 <img src="imagenes/sub1d.jpg" alt="Sub imagen 1D" class="popup-extra-img">`,
+        info1d: `<p>Detalles de la sub imagen 1D.</p>`,
 
-        info2: `<p>Explicación de la imagen 2.</p>
-                <img src="imagenes/img2_extra.jpg" alt="Imagen extra 2" class="popup-extra-img">`,
+        info2: `<p>Explicación de la imagen 2.</p>`,
 
-        info3: `<p>Historia de la imagen 3.</p>
-                <img src="imagenes/img3_extra.jpg" alt="Imagen extra 3" class="popup-extra-img">`,
+        info3: `<p>Historia de la imagen 3.</p>`,
 
-        info4: `<p>Detalles sobre la imagen 4.</p>
-                <img src="imagenes/img4_extra.jpg" alt="Imagen extra 4" class="popup-extra-img">`
+        info4: `<p>Detalles sobre la imagen 4.</p>`
     };
 
     document.getElementById("popupImage").src = imageSrc;
     document.getElementById("popupContent").innerHTML = content[info]; // Inserta el contenido con imagen y texto
     document.getElementById("popup").style.display = "flex";
 }
+
 function closePopup() {
     document.getElementById("popup").style.display = "none"; // Oculta el pop-up
     document.getElementById("popupImage").src = ""; // Limpia la imagen
