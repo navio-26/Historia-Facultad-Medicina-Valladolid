@@ -32,76 +32,75 @@
         }
 
         .header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
-.header-logo {
-    position: absolute;
-    left: 20px; /* Posiciona el logo de la universidad en la esquina izquierda */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60px;
-    height: auto;
-    border-radius: 5px;
-    background: white;
-    padding: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
+        .header-logo {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: auto;
+            border-radius: 5px;
+            background: white;
+            padding: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
 
-.header-logo-medicina {
-    position: absolute;
-    top: 70%;
-    transform: translateY(-50%);
-    width: 120px; /* Hace el logo más grande */
-    height: auto;
-    border-radius: 5px;
-    background: white;
-    padding: 5px;
-    margin-bottom: 5%;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
+        .header-logo-medicina {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 100px;
+            height: auto;
+            border-radius: 5px;
+            background: white;
+            padding: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
 
         .header-text {
             text-align: center;
             width: 100%;
-}
+        }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
-    color: white;
-    background: rgba(0, 0, 0, 0.5); /* Fondo negro traslúcido */
-    padding: 15px 25px;
-    border-radius: 10px;
-    display: inline-block;
-    text-align: center;
-    margin-top: 20px;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Sombra ligera para resaltar */
-    letter-spacing: 1px; /* Espaciado entre letras */
-}
-h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    color: white;
-    background: rgba(0, 0, 0, 0.8); /* Fondo negro traslúcido */
-    padding: 12px 20px;
-    border-radius: 10px;
-    display: inline-block;
-    text-align: center;
-    margin-top: 30px;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Sombra ligera */
-    letter-spacing: 1px; /* Espaciado entre letras */
-}
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px 25px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: center;
+            margin-top: 20px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            color: white;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 12px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+            letter-spacing: 1px;
+        }
 
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2em;
-    color: white;
-}
+        p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2em;
+            color: black;
+        }
 
         .container {
             margin-top: 20px;
@@ -114,11 +113,10 @@ p {
             margin-top: 10px;
         }
         .image-container img, .sub-image-container img {
-            width: 50%;
-            max-width: 200px;
+            width: 90%;
+            max-width: 250px;
             height: auto;
-            margin: 5px;
-            margin-top: 40px;
+            margin: 10px;
             cursor: pointer;
             border-radius: 10px;
             border: 3px solid white;
@@ -137,6 +135,7 @@ p {
             background: white;
             width: 90%;
             max-width: 400px;
+            max-height: 80vh; /* Limita la altura para evitar que se corte en pantallas pequeñas */
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             z-index: 1000;
@@ -144,89 +143,77 @@ p {
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-y: auto; /* Activa el scroll dentro del pop-up */
+        }
+        .popup-content p {
+            margin-bottom: 20px;
+            font-size: 1em;
+            line-height: 1.5;
+            text-align: justify;
         }
         .popup img {
-            width: 100%;
-            max-width: 300px;
+            width: auto;
+            max-width: 90%;
+            height: auto;
             border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        .popup-content {
-            text-align: left;
-            font-size: 16px;
-            font-family: 'Montserrat', sans-serif;
+            margin-top: 10px;
         }
         .close-btn, .back-btn {
             display: block;
             width: 100%;
-            padding: 10px;
-            background-color: burlywood;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
-            font-family: 'Montserrat', sans-serif;
+            padding: 15px;
+            font-size: 1.2em;
+            border-radius: 8px;
         }
-        
-        figure {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    width: fit-content;
-    padding-bottom: 40px; /* Espacio extra debajo de la imagen para el título */
-}
 
+        figure {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            margin-bottom: 60px;
+            width: fit-content;
+            padding-bottom: 50px;
+        }
 
         figcaption {
-    position: absolute;
-    bottom: -30px; /* Ajusta la posición más abajo */
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 8px;
-    border-radius: 7px;
-    font-size: 1.2em;
-    text-align: center;
-    width: 90%;
-    max-width: 200px;
-}
+            position: absolute;
+            bottom: -20px;
+            top: 30 px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 7px;
+            font-size: 1.1em;
+            text-align: center;
+            width: 90%;
+        }
 
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
 
+        .footer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
 
-        figure img {
-    display: block;
-    width: 100%;
-    max-width: 250px; /* Aumentado a 250px como querías */
-    border-radius: 10px;
-}
-footer {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px; /* Espacio entre los logos */
-}
-
-.footer-container img {
-    max-width: 150px; /* Asegura que los logos tengan el mismo tamaño */
-    height: auto; /* Mantiene la proporción */
-    border-radius: 5px; /* Suaviza los bordes */
-    background: white; /* Fondo blanco para resaltar los logos */
-    padding: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-
+        .footer-container img {
+            max-width: 120px;
+            height: auto;
+            border-radius: 5px;
+            background: white;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <header>
@@ -248,15 +235,15 @@ footer {
         <figcaption>Fachada Principal</figcaption>
     </figure>
     <figure>
-        <img src="imagenes/fachada.jpg" alt="Imagen 2" onclick="openPopup('info2', 'imagenes/fachada.jpg')">
+        <img src="imagenes/fachada.jpg" alt="Imagen 2" onclick="openPopup('info2')">
         <figcaption>Detalle Arquitectónico</figcaption>
     </figure>
     <figure>
-        <img src="imagenes/fachada.jpg" alt="Imagen 3" onclick="openPopup('info3', 'imagenes/fachada.jpg')">
+        <img src="imagenes/fachada.jpg" alt="Imagen 3" onclick="openPopup('info3')">
         <figcaption>Vista Lateral</figcaption>
     </figure>
     <figure>
-        <img src="imagenes/fachada.jpg" alt="Imagen 4" onclick="openPopup('info4', 'imagenes/fachada.jpg')">
+        <img src="imagenes/fachada.jpg" alt="Imagen 4" onclick="openPopup('info4')">
         <figcaption>Entrada Principal</figcaption>
     </figure>
 </div>
@@ -265,19 +252,19 @@ footer {
     <h2>Elementos arquitectónicos destacados</h2>
     <button class="back-btn" onclick="goBack()">Volver Atrás</button>
     <figure>
-        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1A" onclick="openPopup('info1a', 'imagenes/circulo.jpg')">
+        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1A" onclick="openPopup('info1a')">
         <figcaption>Detalle del Patio</figcaption>
     </figure>
     <figure>
-        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1B" onclick="openPopup('info1b', 'imagenes/circulo.jpg')">
+        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1B" onclick="openPopup('info1b')">
         <figcaption>Columna Histórica</figcaption>
     </figure>
     <figure>
-        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1C" onclick="openPopup('info1c', 'imagenes/circulo.jpg')">
+        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1C" onclick="openPopup('info1c')">
         <figcaption>Escudo de la Facultad</figcaption>
     </figure>
     <figure>
-        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1D" onclick="openPopup('info1d', 'imagenes/circulo.jpg')">
+        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1D" onclick="openPopup('info1d')">
         <figcaption>Detalle de la Puerta</figcaption>
     </figure>
 </div>
@@ -285,7 +272,7 @@ footer {
     </div>
 
    <div class="popup" id="popup" style="display: none;">
-        <img id="popupImage" src="" alt="Imagen en Explicación">
+        <img id="popupImage" src="">
         <div class="popup-content" id="popupContent"></div>
         <button class="close-btn" onclick="closePopup()">Cerrar</button>
     </div>
@@ -301,33 +288,55 @@ footer {
             document.getElementById("subImages").style.display = "flex";
         }
         
+       
         function openPopup(info, imageSrc) {
     let content = {
-        info1a: `<p>Descripción de la sub imagen 1A.</p>`,
+        info1a: `<h2>Fachada Principal</h2>
+                <img src="imagenes/circulo.jpg" alt="Sub imagen 1A" class="popup-extra-img">
+                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>
+                `,
 
-        info1b: `<p>Explicación sobre la sub imagen 1B.</p>`,
+        info1b: `<h2>Fachada Principal</h2>
+                <img src="imagenes/circulo.jpg" alt="Sub imagen 1B" class="popup-extra-img">
+                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>
+                 `,
 
-        info1c: `<p>Historia de la sub imagen 1C.</p>`,
+        info1c: `<h2>Fachada Principal</h2>
+                <img src="imagenes/circulo.jpg" alt="Sub imagen 1C" class="popup-extra-img">
+                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos.</p>
+                 `,
 
-        info1d: `<p>Detalles de la sub imagen 1D.</p>`,
+        info1d: `<h2>Fachada Principal</h2>
+                <img src="imagenes/circulo.jpg" alt="Sub imagen 1D" class="popup-extra-img">
+                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>
+                 `,
 
-        info2: `<p>Explicación de la imagen 2.</p>`,
+        info2: `<h2>Fachada Principal</h2>
+                <img src="imagenes/fachada.jpg" alt="Imagen extra 2" class="popup-extra-img">
+                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>
+                `,
 
-        info3: `<p>Historia de la imagen 3.</p>`,
+        info3: `<h2>Fachada Principal</h2>
+                <img src="imagenes/fachada.jpg" alt="Imagen extra 3" class="popup-extra-img">
+                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>
+                `,
 
-        info4: `<p>Detalles sobre la imagen 4.</p>`
+        info4: `<h2>Fachada Principal</h2>
+                <img src="imagenes/fachada.jpg" alt="Imagen extra 4" class="popup-extra-img">
+                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos.</p>
+                `
     };
 
-    document.getElementById("popupImage").src = imageSrc;
+    document.getElementById("popupImage").src = imageSrc ? imageSrc : "";
     document.getElementById("popupContent").innerHTML = content[info]; // Inserta el contenido con imagen y texto
     document.getElementById("popup").style.display = "flex";
 }
 
-function closePopup() {
-    document.getElementById("popup").style.display = "none"; // Oculta el pop-up
-    document.getElementById("popupImage").src = ""; // Limpia la imagen
-    document.getElementById("popupContent").innerHTML = ""; // Limpia el contenido
-}
+    function closePopup() {
+        document.getElementById("popup").style.display = "none"; // Oculta el pop-up
+        document.getElementById("popupImage").src = ""; // Limpia la imagen
+        document.getElementById("popupContent").innerHTML = ""; // Limpia el contenido
+    }
 
     </script>
 </body>
