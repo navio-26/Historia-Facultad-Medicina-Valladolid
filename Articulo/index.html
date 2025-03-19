@@ -227,13 +227,59 @@
             padding: 10px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
+
+    .timeline-container {
+        width: 100%;
+        max-height: 60vh;
+        overflow-y: auto; /* Permite desplazarse en la línea del tiempo */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+    .timeline {
+       position: relative;
+        width: 80%;
+        border-left: 4px solid burlywood;
+        padding-left: 20px;
+    }
+
+    .timeline-item {
+        margin-bottom: 20px;
+        position: relative;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        width: 90%;
+    }
+
+    .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        width: 15px;
+        height: 15px;
+        background-color: burlywood;
+       border-radius: 50%;
+        transform: translateY(-50%);
+    }
+
+    .year {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: burlywood;
+    }
+
+
     </style>
 </head>
 <header>
     <div class="header-container">
         <div class="header-text">
             <h1>Historia de la Facultad de Medicina</h1>
-            <h3>Haz clic en la imagen para descubrir más.</h3>
+            <h3>Haz clic en las imagenes para descubrir más.</h3>
         </div>
         <!--<img src="imagenes/logo_medicina.jpg" alt="Logo Facultad de Medicina" class="header-logo-medicina">  --> 
     </div>
@@ -248,6 +294,10 @@
         <figcaption>Fachada Principal</figcaption>
     </figure>
     <figure>
+        <img src="imagenes/fachada.jpg" alt="Historia de la Facultad" onclick="openTimelinePopup()">
+        <figcaption>Historia de la Facultad</figcaption>
+    </figure>
+    <figure>
         <img src="imagenes/fachada.jpg" alt="Imagen 2" onclick="openPopup('info2')">
         <figcaption>Detalle Arquitectónico</figcaption>
     </figure>
@@ -259,7 +309,36 @@
         <img src="imagenes/fachada.jpg" alt="Imagen 4" onclick="openPopup('info4')">
         <figcaption>Entrada Principal</figcaption>
     </figure>
-</div>
+    </div>
+
+    <div class="popup" id="timelinePopup" style="display: none;">
+        <h2>Línea del Tiempo</h2>
+        <div class="timeline-container">
+           <div class="timeline">
+               <div class="timeline-item">
+                    <span class="year">1857</span>
+                    <p>Creación de la Facultad de Medicina.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">1902</span>
+                    <p>Se incorpora la carrera de Enfermería.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">1950</span>
+                    <p>Se inaugura el nuevo edificio.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">1985</span>
+                    <p>Incorporación de la carrera de Odontología.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">2000</span>
+                    <p>Expansión y modernización de las instalaciones.</p>
+                </div>
+            </div>
+        </div>
+        <button class="close-btn" onclick="closeTimelinePopup()">Cerrar</button>
+    </div>
 
 <div class="sub-image-container" id="subImages1" style="display: none;">
     <h2>Elementos arquitectónicos destacados</h2>
@@ -280,11 +359,13 @@
         <img src="imagenes/circulo.jpg" alt="Sub Imagen 1D" onclick="openPopup('info1d')">
         <figcaption>Detalle de la Puerta</figcaption>
     </figure>
+    
+
 </div>
 
     </div>
 
-   <div class="popup" id="popup" style="display: none;">
+    <div class="popup" id="popup" style="display: none;">
         <img id="popupImage" src="">
         <div class="popup-content" id="popupContent"></div>
         <button class="close-btn" onclick="closePopup()">Cerrar</button>
@@ -340,15 +421,22 @@
                 `
     };
 
-    document.getElementById("popupImage").src = imageSrc ? imageSrc : "";
-    document.getElementById("popupContent").innerHTML = content[info]; // Inserta el contenido con imagen y texto
-    document.getElementById("popup").style.display = "flex";
-}
+        document.getElementById("popupImage").src = imageSrc ? imageSrc : "";
+        document.getElementById("popupContent").innerHTML = content[info]; // Inserta el    contenido con imagen y texto
+        document.getElementById("popup").style.display = "flex";
+    }
 
     function closePopup() {
         document.getElementById("popup").style.display = "none"; // Oculta el pop-up
         document.getElementById("popupImage").src = ""; // Limpia la imagen
         document.getElementById("popupContent").innerHTML = ""; // Limpia el contenido
+    }
+    function openTimelinePopup() {
+        document.getElementById("timelinePopup").style.display = "flex";
+    }
+
+    function closeTimelinePopup() {
+        document.getElementById("timelinePopup").style.display = "none";
     }
 
     </script>
