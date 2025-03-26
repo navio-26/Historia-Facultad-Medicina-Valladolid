@@ -8,8 +8,8 @@
     
     <!-- Fuentes de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    
     <style>
+        /* Adaptabilidad móvil */
         @media (max-width: 600px) {
             h1, h2, h3 {
                 font-size: 1.2em;
@@ -27,6 +27,7 @@
             }
         }
 
+        /* General */
         body {
             font-family: 'Poppins', sans-serif;
             text-align: center;
@@ -35,17 +36,13 @@
             margin: 0;
             padding: 0;
         }
-        .header {
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 20px;
-            border-bottom: 3px solid #fff;
-        }
-        header {
+
+        header, .header {
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-bottom: 3px solid #fff;
             text-align: center;
+            color: white;
         }
 
         .header-container {
@@ -55,42 +52,38 @@
             position: relative;
         }
 
-        .header-logo {
+        .header-logo, .header-logo-medicina {
             position: absolute;
-            left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            width: 60px;
-            height: auto;
             border-radius: 5px;
             background: white;
             padding: 5px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-logo {
+            left: 20px;
+            width: 60px;
         }
 
         .header-logo-medicina {
-            position: absolute;
-            top: 50%;
             right: 20px;
-            transform: translateY(-50%);
             width: 100px;
-            height: auto;
-            border-radius: 5px;
-            background: white;
-            padding: 5px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .header-text {
-            text-align: center;
             width: 100%;
         }
-        .back-btn {
-            background-color: burlywood;
-            color: white;
-            font-size: 1em;
-            font-weight: bold;
-            margin-bottom: 20px;
+
+        h1, h2, h3 {
+            display: inline-block;
+            border-radius: 10px;
+            padding: 15px 25px;
+            margin-top: 20px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+            letter-spacing: 1px;
+            text-align: center;
         }
 
         h1 {
@@ -98,39 +91,20 @@
             font-size: 2.5em;
             color: white;
             background: rgba(0, 0, 0, 0.5);
-            padding: 15px 25px;
-            border-radius: 10px;
-            display: inline-block;
-            text-align: center;
-            margin-top: 20px;
-            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-            letter-spacing: 1px;
         }
-        h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1em;
-            color: white;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 15px 25px;
-            border-radius: 10px;
-            display: inline-block;
-            text-align: center;
-            margin-top: 20px;
-            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-            letter-spacing: 1px;
-        }
+
         h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.5em;
             color: white;
             background: rgba(0, 0, 0, 0.8);
-            padding: 12px 20px;
-            border-radius: 10px;
-            display: inline-block;
-            text-align: center;
-            margin-top: 30px;
-            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1em;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
         }
 
         p {
@@ -138,6 +112,7 @@
             font-size: 1.2em;
             color: black;
         }
+
         .extra-info {
             display: none;
             background: rgba(255, 255, 255, 0.9);
@@ -149,16 +124,19 @@
             text-align: justify;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+
         .container {
             margin-top: 20px;
             padding: 10px;
         }
+
         .image-container, .sub-image-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 10px;
         }
+
         .image-container img, .sub-image-container img {
             width: 90%;
             max-width: 250px;
@@ -170,17 +148,11 @@
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
             transition: transform 0.2s;
         }
+
         .image-container img:hover, .sub-image-container img:hover {
             transform: scale(1.05);
         }
-        .popup .popup-extra-img {
-            width: 100%;
-            max-width: 350px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
+
         .popup {
             display: none;
             position: fixed;
@@ -190,7 +162,7 @@
             background: white;
             width: 90%;
             max-width: 400px;
-            max-height: 80vh; /* Limita la altura para evitar que se corte en pantallas pequeñas */
+            max-height: 80vh;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             z-index: 1000;
@@ -198,14 +170,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-y: auto; /* Activa el scroll dentro del pop-up */
+            overflow-y: auto;
         }
-        .popup-content p {
-            margin-bottom: 20px;
-            font-size: 1em;
-            line-height: 1.5;
-            text-align: justify;
-        }
+
         .popup img {
             width: auto;
             max-width: 90%;
@@ -213,12 +180,33 @@
             border-radius: 10px;
             margin-top: 10px;
         }
+
+        .popup .popup-extra-img {
+            width: 100%;
+            max-width: 350px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .popup-content p {
+            margin-bottom: 20px;
+            font-size: 1em;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
         .close-btn, .back-btn {
             display: block;
             width: 100%;
             padding: 15px;
             font-size: 1.2em;
             border-radius: 8px;
+            background-color: burlywood;
+            color: white;
+            font-weight: bold;
+            margin-top: 10px;
         }
 
         figure {
@@ -226,8 +214,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 10px;
-            margin-bottom: 60px;
+            margin: 10px 0 60px;
             width: fit-content;
             padding-bottom: 50px;
         }
@@ -269,291 +256,295 @@
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
-    .timeline-container {
-        width: 100%;
-        max-height: 60vh;
-        overflow-y: auto; /* Permite desplazarse en la línea del tiempo */
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        .timeline-container {
+            width: 100%;
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-    .timeline {
-       position: relative;
-        width: 80%;
-        border-left: 4px solid burlywood;
-        padding-left: 20px;
-    }
+        .timeline {
+            position: relative;
+            width: 80%;
+            border-left: 4px solid burlywood;
+            padding-left: 20px;
+        }
 
-    .timeline-item {
-        margin-bottom: 20px;
-        position: relative;
-        padding: 10px;
-        background: rgba(0, 0, 0, 0.05);
-        border-radius: 8px;
-        width: 90%;
-    }
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            width: 90%;
+        }
 
-    .timeline-item::before {
-        content: "";
-        position: absolute;
-        left: -10px;
-        top: 50%;
-        width: 15px;
-        height: 15px;
-        background-color: burlywood;
-       border-radius: 50%;
-        transform: translateY(-50%);
-    }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            width: 15px;
+            height: 15px;
+            background-color: burlywood;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
 
-    .year {
-        font-weight: bold;
-        font-size: 1.2em;
-        color: burlywood;
-    }
-
-
+        .year {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: burlywood;
+        }
     </style>
 </head>
-<header>
-    <div class="header-container">
-        <div class="header-text">
-            <h1>Historia de la Facultad de Medicina</h1>
-            <h3>Haz clic en las imagenes para descubrir más.</h3>
-        </div>
-        <!--<img src="imagenes/logo_medicina.jpg" alt="Logo Facultad de Medicina" class="header-logo-medicina">  --> 
-    </div>
-</header>
 
 <body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="header-container">
+            <div class="header-text">
+                <h1>Historia de la Facultad de Medicina</h1>
+                <h3>Haz clic en las imágenes para descubrir más.</h3>
+            </div>
+            <!-- <img src="imagenes/logo_medicina.jpg" alt="Logo Facultad de Medicina" class="header-logo-medicina"> -->
+        </div>
+    </header>
+
+    <!-- Contenedor principal -->
     <div class="container">
         <h2>Detalles de la Facultad</h2>
-       <div class="image-container" id="subImages">
 
-    <figure>
-        <img src="imagenes/fundacional.png" alt="Historia de la Facultad" onclick="openTimelinePopup()">
-        <figcaption>Breve Historia de La Facultad</figcaption>
-    </figure>
-    <figure>
-        <img src="imagenes/pachada-anti.png" alt="Imagen 1" onclick="showSubImages('subImages1')">
-        <figcaption>Ubicaciones Históricas</figcaption>
-    </figure>
-    <figure>
-        <img src="imagenes/realacademia.jpg" alt="Imagen 2" onclick="openPopup('info2')">
-        <figcaption>La Real Academia de Cirujía y Medicina</figcaption>
-    </figure>
-    <figure>
-        <img src="imagenes/periodico.png" alt="Imagen 3" onclick="openPopup('info3')">
-        <figcaption>Retos de la Facultad de Medicina</figcaption>
-    </figure>
-    <figure>
-        <img src="imagenes/medicina-sin.png" alt="Imagen 4" onclick="openPopup('info4')">
-        <figcaption>Anécdotas y TradicionesRetos</figcaption>
-    </figure>
-    </div>
+        <!-- Galería principal -->
+        <div class="image-container" id="subImages">
+            <figure>
+                <img src="imagenes/fundacional.png" alt="Historia de la Facultad" onclick="openTimelinePopup()">
+                <figcaption>Breve Historia de la Facultad</figcaption>
+            </figure>
+            <figure>
+                <img src="imagenes/pachada-anti.png" alt="Ubicaciones Históricas" onclick="showSubImages('subImages1')">
+                <figcaption>Ubicaciones Históricas</figcaption>
+            </figure>
+            <figure>
+                <img src="imagenes/realacademia.jpg" alt="La Real Academia" onclick="openPopup('info2')">
+                <figcaption>La Real Academia de Cirugía y Medicina</figcaption>
+            </figure>
+            <figure>
+                <img src="imagenes/periodico.png" alt="Retos de la Facultad" onclick="openPopup('info3')">
+                <figcaption>Retos de la Facultad de Medicina</figcaption>
+            </figure>
+            <figure>
+                <img src="imagenes/medicina-sin.png" alt="Anécdotas y Tradiciones" onclick="openPopup('info4')">
+                <figcaption>Anécdotas y Tradiciones</figcaption>
+            </figure>
+        </div>
 
-    <div class="popup" id="timelinePopup" style="display: none;">
-        <h2>Línea del Tiempo</h2>
-        <div class="timeline-container">
-           <div class="timeline">
-               <div class="timeline-item" onclick="toggleDetails(this)">
-                    <span class="year">1391</span>
-                    <p>Primera aparición de la medicina como estudio en valladolid.</p>
-                    <p>+ Click para Info</p>
-                    <div class="extra-info">
-                    <p>Existencia de una real 
-                    cédula de Enrique III fechada en el 4 de sept de 1391 que podría confirmar el 
-                    funcionamiento de la escuela nombrando a maestros en gramática, lógica, filosofía y otras artes (entre las cuales se consideraba que la medicina era un arte, ya que se consideraba una escuela menor). 
-                    </p>
+        <!-- Línea del tiempo -->
+        <div class="popup" id="timelinePopup" style="display: none;">
+            <h2>Línea del Tiempo</h2>
+            <div class="timeline-container">
+                <div class="timeline">
+
+                    <!-- Ejemplo con info desplegable -->
+                    <div class="timeline-item" onclick="toggleDetails(this)">
+                        <span class="year">1391</span>
+                        <p>Primera aparición de la medicina como estudio en Valladolid.</p>
+                        <p>+ Click para Info</p>
+                        <div class="extra-info">
+                            <p>Existencia de una real cédula de Enrique III (4 de septiembre de 1391) que podría confirmar el funcionamiento de la escuela nombrando a maestros en gramática, lógica, filosofía y otras artes (como la medicina).</p>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item" onclick="toggleDetails(this)">
-                    <span class="year">1404</span>
-                    <p>Fundación de la facultad de Medicina.</p>
-                    <p>+ Click para Info</p>
-                    <div class="extra-info">
-                    <p>El rey Enrique III de Castilla funda la facultad 
-                    de medicina de Valladolid. 
-                    </p>
+
+                    <div class="timeline-item" onclick="toggleDetails(this)">
+                        <span class="year">1404</span>
+                        <p>Fundación de la Facultad de Medicina.</p>
+                        <p>+ Click para Info</p>
+                        <div class="extra-info">
+                            <p>El rey Enrique III de Castilla funda oficialmente la Facultad de Medicina de Valladolid.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="year">1551</span>
-                    <p>Se escribe el primer libro de anatomía en castellano.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="year">1594</span>
-                    <p>Se funda la cátedra de cirugía por Felipe II.</p>
-                </div>
-                <div class="timeline-item" onclick="toggleDetails(this)">
-                    <span class="year">1731</span>
-                    <p>Fundación Real Academia de Medicina.</p>
-                    <p>+ Click para Info</p>
-                    <div class="extra-info">
-                    <p>La segunda con más antigüedad de España. 
-                    Fue seguida por la Real Academia de Cirugía independiente a la anterior en donde se 
-                    realizaron numerosas traducciones de textos claves en Europa y un Tratado de los usos, 
-                    abusos, propiedades y virtudes del tabaco, café, té y chocolate (1796) que sigue siendo 
-                    muy importante sobre todo en América. 
-                    </p>
+
+                    <div class="timeline-item">
+                        <span class="year">1551</span>
+                        <p>Se escribe el primer libro de anatomía en castellano.</p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="year">1886</span>
-                    <p>+ Click para Info</p>
-                    <p>Primer título médico concedido a una mujer en valladolid.</p>
-                </div>
-                <div class="timeline-item" onclick="toggleDetails(this)">
-                    <span class="year">1931</span>
-                    <p>Comienzan los estudios de enfermería.</p>
-                    <div class="extra-info">
-                    <p>Se iniciaron durante la Segunda Republica.</p>
+
+                    <div class="timeline-item">
+                        <span class="year">1594</span>
+                        <p>Se funda la cátedra de cirugía por Felipe II.</p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="year">1977</span>
-                    <p>Construcción del hospital Clínico Universitario.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="year">1978</span>
-                    <p>Enfermeria se integra en la universidad.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="year">1995</span>
-                    <p>Fundación Real Academia de Medicina.</p>
+
+                    <div class="timeline-item" onclick="toggleDetails(this)">
+                        <span class="year">1731</span>
+                        <p>Fundación de la Real Academia de Medicina.</p>
+                        <p>+ Click para Info</p>
+                        <div class="extra-info">
+                            <p>Segunda más antigua de España. Se destacaron traducciones médicas y tratados como el de 1796 sobre el tabaco, café, té y chocolate, muy influyente en América.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="year">1886</span>
+                        <p>Primer título médico concedido a una mujer en Valladolid.</p>
+                    </div>
+
+                    <div class="timeline-item" onclick="toggleDetails(this)">
+                        <span class="year">1931</span>
+                        <p>Comienzan los estudios de Enfermería.</p>
+                        <div class="extra-info">
+                            <p>Se iniciaron durante la Segunda República como parte de una ampliación de los estudios sanitarios.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="year">1977</span>
+                        <p>Construcción del Hospital Clínico Universitario.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="year">1978</span>
+                        <p>Enfermería se integra oficialmente en la universidad.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="year">1995</span>
+                        <p>Reactivación de la Real Academia de Medicina.</p>
+                    </div>
+
                 </div>
             </div>
+            <button class="close-btn" onclick="closeTimelinePopup()">Cerrar</button>
         </div>
-        <button class="close-btn" onclick="closeTimelinePopup()">Cerrar</button>
-    </div>
-    
-<div class="sub-image-container" id="subImages1" style="display: none;">
-    <h2>Elementos arquitectónicos destacados</h2>
-    <button class="back-btn" onclick="goBack()">Volver Atrás</button>
-    <figure>
-        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1A" onclick="openPopup('info1a')">
-        <figcaption>Detalle del Patio</figcaption>
-    </figure>
-    <figure>
-        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1B" onclick="openPopup('info1b')">
-        <figcaption>Columna Histórica</figcaption>
-    </figure>
-    <figure>
-        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1C" onclick="openPopup('info1c')">
-        <figcaption>Escudo de la Facultad</figcaption>
-    </figure>
-    <figure>
-        <img src="imagenes/circulo.jpg" alt="Sub Imagen 1D" onclick="openPopup('info1d')">
-        <figcaption>Detalle de la Puerta</figcaption>
-    </figure>
-    
 
-</div>
+        <!-- Subimágenes interiores -->
+        <div class="sub-image-container" id="subImages1" style="display: none;">
+            <h2>Elementos arquitectónicos destacados</h2>
+            <button class="back-btn" onclick="goBack()">Volver Atrás</button>
 
+            <figure>
+                <img src="imagenes/circulo.jpg" alt="Detalle del Patio" onclick="openPopup('info1a')">
+                <figcaption>Detalle del Patio</figcaption>
+            </figure>
+            <figure>
+                <img src="imagenes/circulo.jpg" alt="Columna Histórica" onclick="openPopup('info1b')">
+                <figcaption>Columna Histórica</figcaption>
+            </figure>
+            <figure>
+                <img src="imagenes/circulo.jpg" alt="Escudo de la Facultad" onclick="openPopup('info1c')">
+                <figcaption>Escudo de la Facultad</figcaption>
+            </figure>
+            <figure>
+                <img src="imagenes/circulo.jpg" alt="Detalle de la Puerta" onclick="openPopup('info1d')">
+                <figcaption>Detalle de la Puerta</figcaption>
+            </figure>
+        </div>
     </div>
 
+    <!-- Pop-up general reutilizable -->
     <div class="popup" id="popup" style="display: none;">
         <img id="popupImage" src="">
         <div class="popup-content" id="popupContent"></div>
         <button class="close-btn" onclick="closePopup()">Cerrar</button>
     </div>
 
+
     <script>
+        // Muestra subimágenes (vista alternativa)
         function showSubImages(id) {
             document.getElementById("subImages").style.display = "none";
             document.getElementById(id).style.display = "flex";
         }
-        
+
+        // Vuelve a la vista principal de imágenes
         function goBack() {
             document.getElementById("subImages1").style.display = "none";
             document.getElementById("subImages").style.display = "flex";
         }
-        
-       
+
+        // Abre pop-up con imagen e información
         function openPopup(info, imageSrc) {
-    let content = {
-        info1a: `<h2>Ubicaciones Históricas</h2>
-                <img src="imagenes/circulo.jpg" alt="Sub imagen 1A" class="popup-extra-img">
-                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>`,
+            const content = {
+                info1a: `
+                    <h2>Ubicaciones Históricas</h2>
+                    <img src="imagenes/circulo.jpg" alt="Sub imagen 1A" class="popup-extra-img">
+                    <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse...</p>`,
 
-        info1b: `<h2>Fachada Principal</h2>
-                <img src="imagenes/circulo.jpg" alt="Sub imagen 1B" class="popup-extra-img">
-                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>
-                 `,
+                info1b: `
+                    <h2>Fachada Principal</h2>
+                    <img src="imagenes/circulo.jpg" alt="Sub imagen 1B" class="popup-extra-img">
+                    <p>La golondrina común es un ave de campo abierto...</p>`,
 
-        info1c: `<h2>Fachada Principal</h2>
-                <img src="imagenes/circulo.jpg" alt="Sub imagen 1C" class="popup-extra-img">
-                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos.</p>
-                 `,
+                info1c: `
+                    <h2>Fachada Principal</h2>
+                    <img src="imagenes/circulo.jpg" alt="Sub imagen 1C" class="popup-extra-img">
+                    <p>La golondrina común es un ave de campo abierto...</p>`,
 
-        info1d: `<h2>Fachada Principal</h2>
-                <img src="imagenes/circulo.jpg" alt="Sub imagen 1D" class="popup-extra-img">
-                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>
-                 `,
+                info1d: `
+                    <h2>Fachada Principal</h2>
+                    <img src="imagenes/circulo.jpg" alt="Sub imagen 1D" class="popup-extra-img">
+                    <p>La golondrina común es un ave de campo abierto...</p>`,
 
-        info2: `<h2>La Real Academia de Cirujía y Medicina</h2>
-                <img src="imagenes/realacademia.jpg" alt="Imagen extra 2" class="popup-extra-img">
-                <p>La real academia de medicina y Cirugía de Valladolid es fundada en 1731 a comienzos del siglo XVIII, 
-                    siendo la segunda más antigua por delante de la de Madrid y posterior a la de Sevilla la diferencia 
-                    entre estas es que la de Valladolid fue concebida con la idea de que se discutieran temas sanitarios 
-                    entre profesionales y las otras 2 eran organizaciones más domesticas entre ciudadanos a veces sin 
-                    ser de profesión médica, La real academia de Valladolid se verá cerrada por Fernando VII , pero sera
-                    abierta de nuevo posteriormente.</p> 
-                   <p>La Real academias de Valladolid incluye dentro de si diferentes ramas de sanidad como clínica 
-                    médica y quirúrgica o el área de veterinaria y farmacia, esta real academia es la única en formar 
-                    parte de la universidad y desde sus inicios fue concebida para tratar y discutir los más novedosos 
-                    avances en el mundo médico.</p>
-                `,
+                info2: `
+                    <h2>La Real Academia de Cirugía y Medicina</h2>
+                    <img src="imagenes/realacademia.jpg" alt="Real Academia" class="popup-extra-img">
+                    <p>La Real Academia de Medicina y Cirugía de Valladolid fue fundada en 1731...</p>`,
 
-        info3: `<h2>Retos de la Facultad de Medicina</h2>
-                <img src="imagenes/periodico.png" alt="Imagen extra 3" class="popup-extra-img">
-                <p>A lo largo de su historia, la Facultad de Medicina de Valladolid se ha enfrentado a numerosos retos que ha logrado superar con el tiempo. Las dificultades comenzaron ya en la ocupación napoleónica, cuando el 13 de noviembre de 1808 fue clausurada temporalmente, aunque los estudios serán restablecidos años después. Por otro lado, en 1845, bajo el rectorado de Claudio Moyano, las enseñanzas médicas se trasladaron a la Universidad de Salamanca, manteniéndose en Valladolid solo algunos estudios para cirujanos menores. No sería hasta 1857, cuando se restablecerían definitivamente los estudios.</p>
+                info3: `
+                    <h2>Retos de la Facultad de Medicina</h2>
+                    <img src="imagenes/periodico.png" alt="Retos" class="popup-extra-img">
+                    <p>A lo largo de su historia, la Facultad de Medicina de Valladolid se ha enfrentado a numerosos retos...</p>`,
 
-                    <p>Otra crisis significativa ocurrió en 1939, cuando, pocos días después de finalizar la Guerra Civil, un incendio destruyó parte del inmueble de la Facultad de Medicina, provocando la pérdida de documentos y obras de arte vinculadas a su patrimonio.</p>
+                info4: `
+                    <h2>Anécdotas y Tradiciones</h2>
+                    <img src="imagenes/medicina-sin.png" alt="Anécdotas" class="popup-extra-img">
+                    <p>La golondrina común es un ave de campo abierto...</p>`
+            };
 
-                   <p> No obstante, a pesar de lo mencionado, el período de mayor dificultad llegó entre 1975 y 1978, en plena transición política. El 8 de febrero de 1975, el régimen franquista ordenó el cierre de varias facultades, incluida Medicina, tras unas protestas estudiantiles que incluyeron el lanzamiento de huevos al rector José Ramón del Sol Fernández. Tras la reapertura en octubre de ese mismo año, las movilizaciones continuaron con demandas de democratización y mejora de las condiciones educativas.</p>
-
-                    <p>A pesar de estas complicaciones históricas, la Facultad de Medicina de Valladolid sigue enfrentando desafíos actuales, como la falta de profesorado, el aumento desmesurado de estudiantes y la insuficiente capacidad de las instalaciones para albergarlos.</p>
-                `,
-
-        info4: `<h2>Anecdotas y Tradicones</h2>
-                <img src="imagenes/medicina-sin.png" alt="Imagen extra 4" class="popup-extra-img">
-                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos.</p>
-                `
-    };
-
-        document.getElementById("popupImage").src = imageSrc ? imageSrc : "";
-        document.getElementById("popupContent").innerHTML = content[info]; // Inserta el    contenido con imagen y texto
-        document.getElementById("popup").style.display = "flex";
-    }
-
-    function closePopup() {
-        document.getElementById("popup").style.display = "none"; // Oculta el pop-up
-        document.getElementById("popupImage").src = ""; // Limpia la imagen
-        document.getElementById("popupContent").innerHTML = ""; // Limpia el contenido
-    }
-    function openTimelinePopup() {
-        document.getElementById("timelinePopup").style.display = "flex";
-    }
-
-    function closeTimelinePopup() {
-        document.getElementById("timelinePopup").style.display = "none";
-    }
-    function toggleDetails(element) {
-        const extra = element.querySelector('.extra-info');
-        if (extra.style.display === "none" || extra.style.display === "") {
-        extra.style.display = "block";
-        } else {
-        extra.style.display = "none";
+            document.getElementById("popupImage").src = imageSrc || "";
+            document.getElementById("popupContent").innerHTML = content[info] || "<p>Contenido no disponible.</p>";
+            document.getElementById("popup").style.display = "flex";
         }
-    }
+
+        // Cierra el pop-up general
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("popupImage").src = "";
+            document.getElementById("popupContent").innerHTML = "";
+        }
+
+        // Abre pop-up de la línea del tiempo
+        function openTimelinePopup() {
+            document.getElementById("timelinePopup").style.display = "flex";
+        }
+
+        // Cierra pop-up de la línea del tiempo
+        function closeTimelinePopup() {
+            document.getElementById("timelinePopup").style.display = "none";
+        }
+
+        // Muestra/oculta detalles adicionales en los eventos de la línea del tiempo
+        function toggleDetails(element) {
+            const extra = element.querySelector('.extra-info');
+            if (extra) {
+                extra.style.display = (extra.style.display === "block") ? "none" : "block";
+            }
+        }
     </script>
+
 </body>
+
 <footer>
     <div class="footer-container">
-        <img src="imagenes/logo_universidad.png">
-        <img src="imagenes/logo_filosofia.png">
+        <a href="https://www.uva.es" target="_blank">
+            <img src="imagenes/logo_universidad.png" alt="Universidad de Valladolid">
+        </a>
+        <a href="https://fyl.uva.es" target="_blank">
+            <img src="imagenes/logo_filosofia.png" alt="Facultad de Filosofía y Letras">
+        </a>
     </div>
 </footer>
 </html>
