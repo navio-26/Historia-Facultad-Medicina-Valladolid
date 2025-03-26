@@ -10,6 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&family=Montserrat:wght@500&display=swap" rel="stylesheet">
     
     <style>
+        @media (max-width: 600px) {
+            h1, h2, h3 {
+                font-size: 1.2em;
+                padding: 10px;
+            }
+            .popup {
+                width: 95%;
+                padding: 15px;
+            }
+            .popup-content p {
+                font-size: 1em;
+            }
+            .timeline-container {
+                max-height: 70vh;
+            }
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             text-align: center;
@@ -67,6 +84,13 @@
         .header-text {
             text-align: center;
             width: 100%;
+        }
+        .back-btn {
+            background-color: burlywood;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
         h1 {
@@ -139,6 +163,14 @@
         .image-container img:hover, .sub-image-container img:hover {
             transform: scale(1.05);
         }
+        .popup .popup-extra-img {
+            width: 100%;
+            max-width: 350px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
         .popup {
             display: none;
             position: fixed;
@@ -193,7 +225,6 @@
         figcaption {
             position: absolute;
             bottom: -20px;
-            top: 30 px;
             left: 50%;
             transform: translateX(-50%);
             color: white;
@@ -291,24 +322,24 @@
        <div class="image-container" id="subImages">
 
     <figure>
-        <img src="imagenes/fachada.jpg" alt="Historia de la Facultad" onclick="openTimelinePopup()">
+        <img src="imagenes/fundacional.png" alt="Historia de la Facultad" onclick="openTimelinePopup()">
         <figcaption>Breve Historia de La Facultad</figcaption>
     </figure>
     <figure>
-        <img src="imagenes/fachada.jpg" alt="Imagen 1" onclick="showSubImages('subImages1')">
+        <img src="imagenes/pachada-anti.png" alt="Imagen 1" onclick="showSubImages('subImages1')">
         <figcaption>Ubicaciones Históricas</figcaption>
     </figure>
     <figure>
-        <img src="imagenes/fachada.jpg" alt="Imagen 2" onclick="openPopup('info2')">
+        <img src="imagenes/realacademia.jpg" alt="Imagen 2" onclick="openPopup('info2')">
         <figcaption>La Real Academia de Cirujía y Medicina</figcaption>
     </figure>
     <figure>
-        <img src="imagenes/fachada.jpg" alt="Imagen 3" onclick="openPopup('info3')">
+        <img src="imagenes/periodico.png" alt="Imagen 3" onclick="openPopup('info3')">
         <figcaption>Anécdotas y Tradiciones</figcaption>
     </figure>
     <figure>
-        <img src="imagenes/fachada.jpg" alt="Imagen 4" onclick="openPopup('info4')">
-        <figcaption>Retos de la Facultad de Madicina</figcaption>
+        <img src="imagenes/medicina-sin.png" alt="Imagen 4" onclick="openPopup('info4')">
+        <figcaption>Retos de la Facultad de Medicina</figcaption>
     </figure>
     </div>
 
@@ -317,24 +348,44 @@
         <div class="timeline-container">
            <div class="timeline">
                <div class="timeline-item">
-                    <span class="year">1857</span>
-                    <p>Creación de la Facultad de Medicina.</p>
+                    <span class="year">1391</span>
+                    <p>Primera aparición de la medicina como estudio en valladolid.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="year">1902</span>
-                    <p>Se incorpora la carrera de Enfermería.</p>
+                    <span class="year">1404</span>
+                    <p>Fundación de la facultad de Medicina.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="year">1950</span>
-                    <p>Se inaugura el nuevo edificio.</p>
+                    <span class="year">1551</span>
+                    <p>Se escribe el primer libro de anatomía en castellano .</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="year">1985</span>
-                    <p>Incorporación de la carrera de Odontología.</p>
+                    <span class="year">1594</span>
+                    <p>Se funda la cátedra de cirugía por Felipe II.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="year">2000</span>
-                    <p>Expansión y modernización de las instalaciones.</p>
+                    <span class="year">1731</span>
+                    <p>Fundación Real Academia de Medicina.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">1886</span>
+                    <p>Primer título médico concedido a una mujer en valladolid.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">1931</span>
+                    <p>Comienzan los estudios de enfermería.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">1977</span>
+                    <p>Construcción del hospital Clínico Universitario.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">1978</span>
+                    <p>Enfermeria se integra en la universidad.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">1995</span>
+                    <p>Fundación Real Academia de Medicina.</p>
                 </div>
             </div>
         </div>
@@ -388,7 +439,7 @@
     let content = {
         info1a: `<h2>Ubicaciones Históricas</h2>
                 <img src="imagenes/circulo.jpg" alt="Sub imagen 1A" class="popup-extra-img">
-                <p>L</p>`,
+                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>`,
 
         info1b: `<h2>Fachada Principal</h2>
                 <img src="imagenes/circulo.jpg" alt="Sub imagen 1B" class="popup-extra-img">
@@ -405,18 +456,33 @@
                 <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>
                  `,
 
-        info2: `<h2>Fachada Principal</h2>
-                <img src="imagenes/fachada.jpg" alt="Imagen extra 2" class="popup-extra-img">
-                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>
+        info2: `<h2>La Real Academia de Cirujía y Medicina</h2>
+                <img src="imagenes/realacademia.jpg" alt="Imagen extra 2" class="popup-extra-img">
+                <p>La real academia de medicina y Cirugía de Valladolid es fundada en 1731 a comienzos del siglo XVIII, 
+                    siendo la segunda más antigua por delante de la de Madrid y posterior a la de Sevilla la diferencia 
+                    entre estas es que la de Valladolid fue concebida con la idea de que se discutieran temas sanitarios 
+                    entre profesionales y las otras 2 eran organizaciones más domesticas entre ciudadanos a veces sin 
+                    ser de profesión médica, La real academia de Valladolid se verá cerrada por Fernando VII , pero sera
+                    abierta de nuevo posteriormente.</p> 
+                   <p>La Real academias de Valladolid incluye dentro de si diferentes ramas de sanidad como clínica 
+                    médica y quirúrgica o el área de veterinaria y farmacia, esta real academia es la única en formar 
+                    parte de la universidad y desde sus inicios fue concebida para tratar y discutir los más novedosos 
+                    avances en el mundo médico.</p>
                 `,
 
-        info3: `<h2>Fachada Principal</h2>
-                <img src="imagenes/fachada.jpg" alt="Imagen extra 3" class="popup-extra-img">
-                <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos</p>
+        info3: `<h2>Anecdotas y Tradicones</h2>
+                <img src="imagenes/periodico.png" alt="Imagen extra 3" class="popup-extra-img">
+                <p>A lo largo de su historia, la Facultad de Medicina de Valladolid se ha enfrentado a numerosos retos que ha logrado superar con el tiempo. Las dificultades comenzaron ya en la ocupación napoleónica, cuando el 13 de noviembre de 1808 fue clausurada temporalmente, aunque los estudios serán restablecidos años después. Por otro lado, en 1845, bajo el rectorado de Claudio Moyano, las enseñanzas médicas se trasladaron a la Universidad de Salamanca, manteniéndose en Valladolid solo algunos estudios para cirujanos menores. No sería hasta 1857, cuando se restablecerían definitivamente los estudios.</p>
+
+                    <p>Otra crisis significativa ocurrió en 1939, cuando, pocos días después de finalizar la Guerra Civil, un incendio destruyó parte del inmueble de la Facultad de Medicina, provocando la pérdida de documentos y obras de arte vinculadas a su patrimonio.</p>
+
+                   <p> No obstante, a pesar de lo mencionado, el período de mayor dificultad llegó entre 1975 y 1978, en plena transición política. El 8 de febrero de 1975, el régimen franquista ordenó el cierre de varias facultades, incluida Medicina, tras unas protestas estudiantiles que incluyeron el lanzamiento de huevos al rector José Ramón del Sol Fernández. Tras la reapertura en octubre de ese mismo año, las movilizaciones continuaron con demandas de democratización y mejora de las condiciones educativas.</p>
+
+                    <p>A pesar de estas complicaciones históricas, la Facultad de Medicina de Valladolid sigue enfrentando desafíos actuales, como la falta de profesorado, el aumento desmesurado de estudiantes y la insuficiente capacidad de las instalaciones para albergarlos.</p>
                 `,
 
         info4: `<h2>Fachada Principal</h2>
-                <img src="imagenes/fachada.jpg" alt="Imagen extra 4" class="popup-extra-img">
+                <img src="imagenes/medicina-sin.png" alt="Imagen extra 4" class="popup-extra-img">
                 <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos.</p>
                 `
     };
