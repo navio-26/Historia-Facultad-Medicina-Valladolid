@@ -138,7 +138,17 @@
             font-size: 1.2em;
             color: black;
         }
-
+        .extra-info {
+            display: none;
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            text-align: justify;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .container {
             margin-top: 20px;
             padding: 10px;
@@ -335,11 +345,11 @@
     </figure>
     <figure>
         <img src="imagenes/periodico.png" alt="Imagen 3" onclick="openPopup('info3')">
-        <figcaption>Anécdotas y Tradiciones</figcaption>
+        <figcaption>Retos de la Facultad de Medicina</figcaption>
     </figure>
     <figure>
         <img src="imagenes/medicina-sin.png" alt="Imagen 4" onclick="openPopup('info4')">
-        <figcaption>Retos de la Facultad de Medicina</figcaption>
+        <figcaption>Anécdotas y TradicionesRetos</figcaption>
     </figure>
     </div>
 
@@ -347,33 +357,59 @@
         <h2>Línea del Tiempo</h2>
         <div class="timeline-container">
            <div class="timeline">
-               <div class="timeline-item">
+               <div class="timeline-item" onclick="toggleDetails(this)">
                     <span class="year">1391</span>
                     <p>Primera aparición de la medicina como estudio en valladolid.</p>
+                    <p>+ Click para Info</p>
+                    <div class="extra-info">
+                    <p>Existencia de una real 
+                    cédula de Enrique III fechada en el 4 de sept de 1391 que podría confirmar el 
+                    funcionamiento de la escuela nombrando a maestros en gramática, lógica, filosofía y otras artes (entre las cuales se consideraba que la medicina era un arte, ya que se consideraba una escuela menor). 
+                    </p>
+                    </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" onclick="toggleDetails(this)">
                     <span class="year">1404</span>
                     <p>Fundación de la facultad de Medicina.</p>
+                    <p>+ Click para Info</p>
+                    <div class="extra-info">
+                    <p>El rey Enrique III de Castilla funda la facultad 
+                    de medicina de Valladolid. 
+                    </p>
+                    </div>
                 </div>
                 <div class="timeline-item">
                     <span class="year">1551</span>
-                    <p>Se escribe el primer libro de anatomía en castellano .</p>
+                    <p>Se escribe el primer libro de anatomía en castellano.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="year">1594</span>
                     <p>Se funda la cátedra de cirugía por Felipe II.</p>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" onclick="toggleDetails(this)">
                     <span class="year">1731</span>
                     <p>Fundación Real Academia de Medicina.</p>
+                    <p>+ Click para Info</p>
+                    <div class="extra-info">
+                    <p>La segunda con más antigüedad de España. 
+                    Fue seguida por la Real Academia de Cirugía independiente a la anterior en donde se 
+                    realizaron numerosas traducciones de textos claves en Europa y un Tratado de los usos, 
+                    abusos, propiedades y virtudes del tabaco, café, té y chocolate (1796) que sigue siendo 
+                    muy importante sobre todo en América. 
+                    </p>
+                    </div>
                 </div>
                 <div class="timeline-item">
                     <span class="year">1886</span>
+                    <p>+ Click para Info</p>
                     <p>Primer título médico concedido a una mujer en valladolid.</p>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" onclick="toggleDetails(this)">
                     <span class="year">1931</span>
                     <p>Comienzan los estudios de enfermería.</p>
+                    <div class="extra-info">
+                    <p>Se iniciaron durante la Segunda Republica.</p>
+                    </div>
                 </div>
                 <div class="timeline-item">
                     <span class="year">1977</span>
@@ -391,7 +427,7 @@
         </div>
         <button class="close-btn" onclick="closeTimelinePopup()">Cerrar</button>
     </div>
-
+    
 <div class="sub-image-container" id="subImages1" style="display: none;">
     <h2>Elementos arquitectónicos destacados</h2>
     <button class="back-btn" onclick="goBack()">Volver Atrás</button>
@@ -470,7 +506,7 @@
                     avances en el mundo médico.</p>
                 `,
 
-        info3: `<h2>Anecdotas y Tradicones</h2>
+        info3: `<h2>Retos de la Facultad de Medicina</h2>
                 <img src="imagenes/periodico.png" alt="Imagen extra 3" class="popup-extra-img">
                 <p>A lo largo de su historia, la Facultad de Medicina de Valladolid se ha enfrentado a numerosos retos que ha logrado superar con el tiempo. Las dificultades comenzaron ya en la ocupación napoleónica, cuando el 13 de noviembre de 1808 fue clausurada temporalmente, aunque los estudios serán restablecidos años después. Por otro lado, en 1845, bajo el rectorado de Claudio Moyano, las enseñanzas médicas se trasladaron a la Universidad de Salamanca, manteniéndose en Valladolid solo algunos estudios para cirujanos menores. No sería hasta 1857, cuando se restablecerían definitivamente los estudios.</p>
 
@@ -481,7 +517,7 @@
                     <p>A pesar de estas complicaciones históricas, la Facultad de Medicina de Valladolid sigue enfrentando desafíos actuales, como la falta de profesorado, el aumento desmesurado de estudiantes y la insuficiente capacidad de las instalaciones para albergarlos.</p>
                 `,
 
-        info4: `<h2>Fachada Principal</h2>
+        info4: `<h2>Anecdotas y Tradicones</h2>
                 <img src="imagenes/medicina-sin.png" alt="Imagen extra 4" class="popup-extra-img">
                 <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse y que, en consecuencia, se ha diseminado con la expansión humana. Construye nidos en forma de taza, con bolitas de barro en graneros y construcciones similares, y se alimenta de insectos que atrapa en vuelo. Su alimentación insectívora contribuye a la tolerancia de los humanos hacia esta especie; en el pasado esta aceptación se vio reforzada por supersticiones respecto del ave y su nido. Existen frecuentes referencias culturales a la golondrina común en escritos literarios tanto debido a su proximidad con el ser humano como por su migración anual. Suelen volar en conjuntos.</p>
                 `
@@ -504,7 +540,14 @@
     function closeTimelinePopup() {
         document.getElementById("timelinePopup").style.display = "none";
     }
-
+    function toggleDetails(element) {
+        const extra = element.querySelector('.extra-info');
+        if (extra.style.display === "none" || extra.style.display === "") {
+        extra.style.display = "block";
+        } else {
+        extra.style.display = "none";
+        }
+    }
     </script>
 </body>
 <footer>
