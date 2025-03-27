@@ -182,10 +182,9 @@
         }
 
         .popup .popup-extra-img {
-            width: 100%;
-            max-width: 350px;
-            height: 200px;
-            object-fit: cover;
+            width: auto;
+            max-width: 90%;
+            height: auto;
             border-radius: 10px;
             margin-top: 10px;
         }
@@ -304,6 +303,8 @@
 
 <body>
 
+<!-- BLOQUE EN ESPAÑOL -->
+<div class="lang es">
     <!-- Encabezado -->
     <header>
         <div class="header-container">
@@ -314,7 +315,10 @@
             <!-- <img src="imagenes/logo_medicina.jpg" alt="Logo Facultad de Medicina" class="header-logo-medicina"> -->
         </div>
     </header>
-
+<div id="language-selector">
+    <img src="imagenes/es.png" alt="Español" onclick="setLanguage('es')" style="width: 40px; cursor: pointer; margin: 10px;">
+    <img src="imagenes/uk.png" alt="English" onclick="setLanguage('en')" style="width: 40px; cursor: pointer; margin: 10px;">
+</div>
     <!-- Contenedor principal -->
     <div class="container">
         <h2>Detalles de la Facultad</h2>
@@ -355,7 +359,11 @@
                         <p>Primera aparición de la medicina como estudio en Valladolid.</p>
                         <p>+ Click para Info</p>
                         <div class="extra-info">
-                            <p>Existencia de una real cédula de Enrique III (4 de septiembre de 1391) que podría confirmar el funcionamiento de la escuela nombrando a maestros en gramática, lógica, filosofía y otras artes (como la medicina).</p>
+                            <p>Existencia de una real 
+                            cédula de Enrique III fechada en el 4 de sept de 1391 que podría confirmar el 
+                            funcionamiento de la escuela nombrando a maestros en gramática, lógica, filosofía y otras 
+                            artes (entre las cuales se consideraba que la medicina era un arte, ya que se consideraba 
+                            una escuela menor). </p>
                         </div>
                     </div>
 
@@ -383,7 +391,11 @@
                         <p>Fundación de la Real Academia de Medicina.</p>
                         <p>+ Click para Info</p>
                         <div class="extra-info">
-                            <p>Segunda más antigua de España. Se destacaron traducciones médicas y tratados como el de 1796 sobre el tabaco, café, té y chocolate, muy influyente en América.</p>
+                            <p>La segunda con más antigüedad de España. 
+                            Fue seguida por la Real Academia de Cirugía independiente a la anterior en donde se 
+                            realizaron numerosas traducciones de textos claves en Europa y un Tratado de los usos, 
+                            abusos, propiedades y virtudes del tabaco, café, té y chocolate (1796) que sigue siendo 
+                            muy importante sobre todo en América.</p>
                         </div>
                     </div>
 
@@ -395,6 +407,7 @@
                     <div class="timeline-item" onclick="toggleDetails(this)">
                         <span class="year">1931</span>
                         <p>Comienzan los estudios de Enfermería.</p>
+                        <p>+ Click para Info</p>
                         <div class="extra-info">
                             <p>Se iniciaron durante la Segunda República como parte de una ampliación de los estudios sanitarios.</p>
                         </div>
@@ -422,81 +435,296 @@
 
         <!-- Subimágenes interiores -->
         <div class="sub-image-container" id="subImages1" style="display: none;">
-            <h2>Elementos arquitectónicos destacados</h2>
+            <h2>Diferentes Ubicaciones de la Facultad a lo Largo del Tiempo</h2>
             <button class="back-btn" onclick="goBack()">Volver Atrás</button>
 
             <figure>
-                <img src="imagenes/circulo.jpg" alt="Detalle del Patio" onclick="openPopup('info1a')">
-                <figcaption>Detalle del Patio</figcaption>
+                <img src="imagenes/1472.png" alt="Detalle del Patio" onclick="openPopup('info1a')">
+                <figcaption>1472</figcaption>
             </figure>
             <figure>
-                <img src="imagenes/circulo.jpg" alt="Columna Histórica" onclick="openPopup('info1b')">
-                <figcaption>Columna Histórica</figcaption>
+                <img src="imagenes/1717.png" alt="Columna Histórica" onclick="openPopup('info1b')">
+                <figcaption>1717</figcaption>
             </figure>
             <figure>
-                <img src="imagenes/circulo.jpg" alt="Escudo de la Facultad" onclick="openPopup('info1c')">
-                <figcaption>Escudo de la Facultad</figcaption>
+                <img src="imagenes/1912.png" alt="Escudo de la Facultad" onclick="openPopup('info1c')">
+                <figcaption>1912</figcaption>
             </figure>
             <figure>
-                <img src="imagenes/circulo.jpg" alt="Detalle de la Puerta" onclick="openPopup('info1d')">
-                <figcaption>Detalle de la Puerta</figcaption>
+                <img src="imagenes/1916.png" alt="Detalle de la Puerta" onclick="openPopup('info1d')">
+                <figcaption>Academia de Anatomía en 1916</figcaption>
             </figure>
+            <figure>
+                <img src="imagenes/reforma.png" alt="Detalle de la Puerta" onclick="openPopup('info1e')">
+                <figcaption>Vista Panorámica 1960</figcaption>
+            </figure>
+            <figure>
+                <img src="imagenes/1980.png" alt="Detalle de la Puerta" onclick="openPopup('info1f')">
+                <figcaption>1980</figcaption>
+            </figure>              
+            <figure>
+                <img src="imagenes/fachada.jpg" alt="Detalle de la Puerta" onclick="openPopup('info1g')">
+                <figcaption>Actualidad</figcaption>
+            </figure>                       
         </div>
     </div>
 
-    <!-- Pop-up general reutilizable -->
-    <div class="popup" id="popup" style="display: none;">
-        <img id="popupImage" src="">
-        <div class="popup-content" id="popupContent"></div>
-        <button class="close-btn" onclick="closePopup()">Cerrar</button>
+    
+</div>
+
+<div class="lang en" style="display: none;">
+<!-- Header -->
+<header>
+    <div class="header-container">
+        <div class="header-text">
+            <h1>History of the Faculty of Medicine</h1>
+            <h3>Click on the images to discover more.</h3>
+        </div>
+        <!-- <img src="imagenes/logo_medicina.jpg" alt="Faculty of Medicine Logo" class="header-logo-medicina"> -->
     </div>
 
+</header>
+    <div id="language-selector">
+        <img src="imagenes/es.png" alt="Español" onclick="setLanguage('es')" style="width: 40px; cursor: pointer; margin: 10px;">
+        <img src="imagenes/uk.png" alt="English" onclick="setLanguage('en')" style="width: 40px; cursor: pointer; margin: 10px;">
+    </div>
+<!-- Main container -->
+<div class="container">
+    <h2>Faculty Details</h2>
 
+    <!-- Main gallery -->
+    <div class="image-container" id="subImages_en">
+        <figure>
+            <img src="imagenes/fundacional.png" alt="History of the Faculty" onclick="openTimelinePopup()">
+            <figcaption>Brief History of the Faculty</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/pachada-anti.png" alt="Historical Locations" onclick="showSubImages('subImages1')">
+            <figcaption>Historical Locations</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/realacademia.jpg" alt="The Royal Academy" onclick="openPopup('info2')">
+            <figcaption>The Royal Academy of Surgery and Medicine</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/periodico.png" alt="Faculty Challenges" onclick="openPopup('info3')">
+            <figcaption>Challenges of the Faculty of Medicine</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/medicina-sin.png" alt="Anecdotes and Traditions" onclick="openPopup('info4')">
+            <figcaption>Anecdotes and Traditions</figcaption>
+        </figure>
+    </div>
+
+    <!-- Timeline -->
+    <div class="popup" id="timelinePopup_en" style="display: none;">
+        <h2>Timeline</h2>
+        <div class="timeline-container">
+            <div class="timeline">
+
+                <!-- Example with collapsible info -->
+                <div class="timeline-item" onclick="toggleDetails(this)">
+                    <span class="year">1391</span>
+                    <p>First mention of medicine as a field of study in Valladolid.</p>
+                    <p>+ Click for Info</p>
+                    <div class="extra-info">
+                        <p>There is a royal decree from Enrique III dated September 4, 1391, which could confirm the 
+                        school's operation by naming teachers in grammar, logic, philosophy, and other arts (medicine 
+                        was considered an art at the time, part of the minor faculties).</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" onclick="toggleDetails(this)">
+                    <span class="year">1404</span>
+                    <p>Foundation of the Faculty of Medicine.</p>
+                    <p>+ Click for Info</p>
+                    <div class="extra-info">
+                        <p>King Enrique III of Castile officially founded the Faculty of Medicine of Valladolid.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="year">1551</span>
+                    <p>The first anatomy book in Spanish was written.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="year">1594</span>
+                    <p>The Chair of Surgery was founded by Philip II.</p>
+                </div>
+
+                <div class="timeline-item" onclick="toggleDetails(this)">
+                    <span class="year">1731</span>
+                    <p>Foundation of the Royal Academy of Medicine.</p>
+                    <p>+ Click for Info</p>
+                    <div class="extra-info">
+                        <p>The second oldest in Spain. It was followed by the independent Royal Academy of Surgery, 
+                        where many key European texts were translated and a Treatise on the uses, abuses, properties 
+                        and virtues of tobacco, coffee, tea, and chocolate (1796) was written, still important today, 
+                        especially in the Americas.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="year">1886</span>
+                    <p>First medical degree granted to a woman in Valladolid.</p>
+                </div>
+
+                <div class="timeline-item" onclick="toggleDetails(this)">
+                    <span class="year">1931</span>
+                    <p>Nursing studies begin.</p>
+                    <p>+ Click for Info</p>
+                    <div class="extra-info">
+                        <p>Started during the Second Republic as part of an expansion of health-related studies.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="year">1977</span>
+                    <p>Construction of the University Clinical Hospital.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="year">1978</span>
+                    <p>Nursing is officially integrated into the university.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="year">1995</span>
+                    <p>Reactivation of the Royal Academy of Medicine.</p>
+                </div>
+
+            </div>
+        </div>
+        <button class="close-btn" onclick="closeTimelinePopup()">Close</button>
+    </div>
+
+    <!-- Sub-images interior -->
+    <div class="sub-image-container" id="subImages1_en" style="display: none;">
+        <h2>Different Faculty Locations Over Time</h2>
+        <button class="back-btn" onclick="goBack()">Go Back</button>
+
+        <figure>
+            <img src="imagenes/1472.png" alt="Courtyard Detail" onclick="openPopup('info1a')">
+            <figcaption>1472</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/1717.png" alt="Historical Column" onclick="openPopup('info1b')">
+            <figcaption>1717</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/1912.png" alt="Faculty Emblem" onclick="openPopup('info1c')">
+            <figcaption>1912</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/1916.png" alt="Door Detail" onclick="openPopup('info1d')">
+            <figcaption>Anatomy Academy in 1916</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/reforma.png" alt="Panoramic View" onclick="openPopup('info1e')">
+            <figcaption>Panoramic View 1960</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/1980.png" alt="1980 Building" onclick="openPopup('info1f')">
+            <figcaption>1980</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/fachada.jpg" alt="Current Facade" onclick="openPopup('info1g')">
+            <figcaption>Present Day</figcaption>
+        </figure>                       
+    </div>
+</div>
+
+
+</div>
+<!-- Reusable general popup -->
+<div class="popup" id="popup" style="display: none;">
+    <img id="popupImage" src="">
+    <div class="popup-content" id="popupContent"></div>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+</div>
     <script>
+        let currentLanguage = 'es';
         // Muestra subimágenes (vista alternativa)
-        function showSubImages(id) {
-            document.getElementById("subImages").style.display = "none";
-            document.getElementById(id).style.display = "flex";
+        function showSubImages(idBase) {
+            if (currentLanguage === 'en') {
+                document.getElementById("subImages_en").style.display = "none";
+                document.getElementById(idBase + "_en").style.display = "flex";
+            } else {
+                document.getElementById("subImages").style.display = "none";
+                document.getElementById(idBase).style.display = "flex";
+            }
         }
+
 
         // Vuelve a la vista principal de imágenes
         function goBack() {
             document.getElementById("subImages1").style.display = "none";
             document.getElementById("subImages").style.display = "flex";
         }
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            closePopup(); // Cerramos el popup si estaba abierto para actualizar idioma
+        }
 
-        // Abre pop-up con imagen e información
-        function openPopup(info, imageSrc) {
-            const content = {
+            const popupContent_es = {
                 info1a: `
-                    <h2>Ubicaciones Históricas</h2>
-                    <img src="imagenes/circulo.jpg" alt="Sub imagen 1A" class="popup-extra-img">
-                    <p>La golondrina común es un ave de campo abierto que normalmente utiliza estructuras construidas por el ser humano para reproducirse...</p>`,
+                    <h2>1472</h2>
+                    <img src="imagenes/1472.png" alt="Sub imagen 1A" class="popup-extra-img">
+                    <p>Dibujo de Diego Pérez, de la entrada del edificio gótico de la Universidad con representación del atrio y sus columnas. 1472. En sus dependencias se leían las lecciones, en un Aula de los Estudios Generales, con contenidos de los Aforismos Hipocráticos y textos de Galeno y Avicena, soporte de la enseñanza de la medicina en la época en lo que se conocía como Antiguo Régimen.</p>`,
 
                 info1b: `
-                    <h2>Fachada Principal</h2>
-                    <img src="imagenes/circulo.jpg" alt="Sub imagen 1B" class="popup-extra-img">
-                    <p>La golondrina común es un ave de campo abierto...</p>`,
+                    <h2>1717</h2>
+                    <img src="imagenes/1717.png" alt="Sub imagen 1B" class="popup-extra-img">
+                    <p> Edificio barroco de la Universidad de Valladolid donde se siguieron impartiendo las lecciones de Medicina. Se edificó una nueva fachada en el espacio 
+                        ocupado por el Colegio médico de San Rafael. Se construyó un nuevo patio 
+                        barroco, incrementando las aulas y se asignó una a impartir la enseñanza de 
+                        la medicina con referencias a los grandes médicos del siglo anterior.</p>`,
 
                 info1c: `
-                    <h2>Fachada Principal</h2>
-                    <img src="imagenes/circulo.jpg" alt="Sub imagen 1C" class="popup-extra-img">
-                    <p>La golondrina común es un ave de campo abierto...</p>`,
+                    <h2>1912</h2>
+                    <img src="imagenes/1912.png" alt="Sub imagen 1C" class="popup-extra-img">
+                    <p>Fachada del edificio de la Facultad de Medicina donde se aprecian sus tres alturas principales, el ático y las ventanas del sótano 1912.</p>`,
 
                 info1d: `
-                    <h2>Fachada Principal</h2>
-                    <img src="imagenes/circulo.jpg" alt="Sub imagen 1D" class="popup-extra-img">
-                    <p>La golondrina común es un ave de campo abierto...</p>`,
+                    <h2>Instituto Anatómico Sierra en 1916</h2>
+                    <img src="imagenes/1916.png" alt="Sub imagen 1D" class="popup-extra-img">
+                    <p> Vista exterior del Instituto Anatómico Sierra en 1916. Fotografía obtenida 
+                        del Libro publicado en la Inauguración del «Instituto Anatómico Sierra» el 
+                        24 de mayo de 1916</p>`,
+                info1e: `
+                    <h2>Vista Panorámica tras la ampliación</h2>
+                    <img src="imagenes/reforma.png" alt="Sub imagen 1D" class="popup-extra-img">
+                    <p> Panorámica de los edificios del antiguo Hospital Provincial y la Facultad de Medicina, 
+                        a finales de los años 60 y donde se aprecia la nueva fisonomía de la reformada Facultad de Medicina cubierta de loseta blanca.</p>`,
+                info1f: `
+                    <h2>1980</h2>
+                    <img src="imagenes/1980.png" alt="Sub imagen 1D" class="popup-extra-img">
+                    <p>Fachada de la Facultad de Medicina en los años 80 
+                        del siglo pasado.</p>`,
+                info1g: `
+                    <h2>Actualidad</h2>
+                    <img src="imagenes/fachada.jpg" alt="Sub imagen 1D" class="popup-extra-img">
+                    <p>Fachada de la Facultad de Medicina en la actualidad.</p>`,
 
                 info2: `
                     <h2>La Real Academia de Cirugía y Medicina</h2>
                     <img src="imagenes/realacademia.jpg" alt="Real Academia" class="popup-extra-img">
-                    <p>La Real Academia de Medicina y Cirugía de Valladolid fue fundada en 1731...</p>`,
+                    <p>La real academia de medicina y Cirugía de Valladolid es fundada en 1731 a comienzos del siglo XVIII, 
+                        siendo la segunda más antigua por delante de la de Madrid y posterior a la de Sevilla la diferencia 
+                        entre estas es que la de Valladolid fue concebida con la idea de que se discutieran temas sanitarios 
+                        entre profesionales y las otras 2 eran organizaciones más domesticas entre ciudadanos a veces sin 
+                        ser de profesión médica, La real academia de Valladolid se verá cerrada por Fernando VII , pero sera 
+                        bierta de nuevo posteriormente.</p>
+                    <p>La Real academias de Valladolid incluye dentro de si diferentes ramas de sanidad como clínica 
+                        médica y quirúrgica o el área de veterinaria y farmacia, esta real academia es la única en formar 
+                        parte de la universidad y desde sus inicios fue concebida para tratar y discutir los más novedosos 
+                        avances en el mundo médico. </p>`,
 
                 info3: `
                     <h2>Retos de la Facultad de Medicina</h2>
                     <img src="imagenes/periodico.png" alt="Retos" class="popup-extra-img">
-                    <p>A lo largo de su historia, la Facultad de Medicina de Valladolid se ha enfrentado a numerosos retos...</p>`,
+                    <p>A lo largo de su historia, la Facultad de Medicina de Valladolid se ha enfrentado a numerosos retos que ha logrado superar con el tiempo. Las dificultades comenzaron ya en la ocupación napoleónica, cuando el 13 de noviembre de 1808 fue clausurada temporalmente, aunque los estudios serán restablecidos años después. Por otro lado, en 1845, bajo el rectorado de Claudio Moyano, las enseñanzas médicas se trasladaron a la Universidad de Salamanca, manteniéndose en Valladolid solo algunos estudios para cirujanos menores. No sería hasta 1857, cuando se restablecerían definitivamente los estudios. </p><p>Otra crisis significativa ocurrió en 1939, cuando, pocos días después de finalizar la Guerra Civil, un incendio destruyó parte del inmueble de la Facultad de Medicina, provocando la pérdida de documentos y obras de arte vinculadas a su patrimonio.</p><p>No obstante, a pesar de lo mencionado, el período de mayor dificultad llegó entre 1975 y 1978, en plena transición política. El 8 de febrero de 1975, el régimen franquista ordenó el cierre de varias facultades, incluida Medicina, tras unas protestas estudiantiles que incluyeron el lanzamiento de huevos al rector José Ramón del Sol Fernández. Tras la reapertura en octubre de ese mismo año, las movilizaciones continuaron con demandas de democratización y mejora de las condiciones educativas.</p><p>A pesar de estas complicaciones históricas, la Facultad de Medicina de Valladolid sigue enfrentando desafíos actuales, como la falta de profesorado, el aumento desmesurado de estudiantes y la insuficiente capacidad de las instalaciones para albergarlos. </p>`,
 
                 info4: `
                     <h2>Anécdotas y Tradiciones</h2>
@@ -504,26 +732,97 @@
                     <p>La golondrina común es un ave de campo abierto...</p>`
             };
 
+        const popupContent_en = {
+            info1a: `
+                <h2>1472</h2>
+                <img src="imagenes/1472.png" alt="Sub image 1A" class="popup-extra-img">
+                <p>Drawing by Diego Pérez of the entrance to the Gothic building of the University with depiction of the atrium and its columns. 1472. Inside, lessons were held in a General Studies Hall, covering content from the Hippocratic Aphorisms and texts by Galen and Avicenna, the basis of medical education at the time during what was known as the Ancien Régime.</p>`,
+
+            info1b: `
+                <h2>1717</h2>
+                <img src="imagenes/1717.png" alt="Sub image 1B" class="popup-extra-img">
+                <p>Baroque building of the University of Valladolid where medical lessons continued to be taught. A new façade was constructed on the site occupied by the San Rafael Medical College. A new baroque courtyard was built, increasing the number of classrooms, and one was assigned to medical instruction, referencing the great physicians of the previous century.</p>`,
+
+            info1c: `
+                <h2>1912</h2>
+                <img src="imagenes/1912.png" alt="Sub image 1C" class="popup-extra-img">
+                <p>Façade of the Faculty of Medicine building showing its three main floors, the attic, and the basement windows. 1912.</p>`,
+
+            info1d: `
+                <h2>Anatomical Institute Sierra in 1916</h2>
+                <img src="imagenes/1916.png" alt="Sub image 1D" class="popup-extra-img">
+                <p>Exterior view of the Sierra Anatomical Institute in 1916. Photograph from the book published for the inauguration of the "Instituto Anatómico Sierra" on May 24, 1916.</p>`,
+
+            info1e: `
+                <h2>Panoramic View after Expansion</h2>
+                <img src="imagenes/reforma.png" alt="Sub image 1E" class="popup-extra-img">
+                <p>Panoramic view of the buildings of the former Provincial Hospital and the Faculty of Medicine in the late 1960s, showing the new appearance of the renovated Faculty of Medicine covered in white tiles.</p>`,
+
+            info1f: `
+                <h2>1980</h2>
+                <img src="imagenes/1980.png" alt="Sub image 1F" class="popup-extra-img">
+                <p>Façade of the Faculty of Medicine in the 1980s.</p>`,
+
+            info1g: `
+                <h2>Present Day</h2>
+                <img src="imagenes/fachada.jpg" alt="Sub image 1G" class="popup-extra-img">
+                <p>Current façade of the Faculty of Medicine.</p>`,
+
+            info2: `
+                <h2>The Royal Academy of Surgery and Medicine</h2>
+                <img src="imagenes/realacademia.jpg" alt="Royal Academy" class="popup-extra-img">
+                <p>The Royal Academy of Medicine and Surgery of Valladolid was founded in 1731, at the beginning of the 18th century. It is the second oldest in Spain, after the one in Seville and before Madrid’s. Valladolid's academy was established with the aim of discussing health topics among professionals, unlike the others which were more domestic organizations often without medically trained members. The academy was closed by Ferdinand VII but later reopened.</p>
+                <p>The Valladolid Academy includes different branches of health, such as clinical and surgical medicine, as well as veterinary and pharmacy. It is the only Royal Academy integrated into a university and, from the beginning, was conceived to discuss and address the latest medical advances.</p>`,
+
+            info3: `
+                <h2>Challenges of the Faculty of Medicine</h2>
+                <img src="imagenes/periodico.png" alt="Challenges" class="popup-extra-img">
+                <p>Throughout its history, the Faculty of Medicine of Valladolid has faced many challenges and managed to overcome them. Difficulties started during the Napoleonic occupation, when on November 13, 1808, it was temporarily closed, although studies resumed years later. In 1845, under Rector Claudio Moyano, medical education was moved to the University of Salamanca, with only minor surgical training remaining in Valladolid. Full studies weren’t restored until 1857.</p>
+                <p>Another major crisis came in 1939 when, shortly after the end of the Spanish Civil War, a fire destroyed part of the Faculty building, resulting in the loss of important documents and artworks.</p>
+                <p>However, the most difficult period came between 1975 and 1978, during the Spanish transition to democracy. On February 8, 1975, the Franco regime ordered the closure of several faculties, including Medicine, after student protests that included throwing eggs at Rector José Ramón del Sol Fernández. After reopening in October that same year, protests continued with demands for democratization and improved educational conditions.</p>
+                <p>Despite these historical challenges, the Faculty still faces issues today, such as a shortage of teaching staff, overcrowding, and insufficient infrastructure to accommodate the number of students.</p>`,
+
+            info4: `
+                <h2>Anecdotes and Traditions</h2>
+                <img src="imagenes/medicina-sin.png" alt="Anecdotes" class="popup-extra-img">
+                <p>The common swallow is a bird of open fields... [Add actual English version here if you want to replace the placeholder]</p>`
+        };
+               
+        // Paso 4: Modificamos openPopup para que use el idioma actual
+        function openPopup(info, imageSrc) {
+            const content = currentLanguage === 'en' ? popupContent_en : popupContent_es;
+
+            document.getElementById("popup").setAttribute("data-info", info); // Esto guarda el id del contenido abierto
             document.getElementById("popupImage").src = imageSrc || "";
-            document.getElementById("popupContent").innerHTML = content[info] || "<p>Contenido no disponible.</p>";
+            document.getElementById("popupContent").innerHTML = content[info] || "<p>Information not available</p>";
             document.getElementById("popup").style.display = "flex";
         }
-
+        
         // Cierra el pop-up general
         function closePopup() {
-            document.getElementById("popup").style.display = "none";
+            const popup = document.getElementById("popup");
+            popup.style.display = "none";
+            popup.removeAttribute("data-info");
             document.getElementById("popupImage").src = "";
             document.getElementById("popupContent").innerHTML = "";
         }
 
-        // Abre pop-up de la línea del tiempo
         function openTimelinePopup() {
-            document.getElementById("timelinePopup").style.display = "flex";
+            if (currentLanguage === 'en') {
+                document.getElementById("timelinePopup_en").style.display = "flex";
+            } else {
+                document.getElementById("timelinePopup").style.display = "flex";
+            }
         }
+
 
         // Cierra pop-up de la línea del tiempo
         function closeTimelinePopup() {
-            document.getElementById("timelinePopup").style.display = "none";
+            if (currentLanguage === 'en') {
+                document.getElementById("timelinePopup_en").style.display = "none";
+            } else {
+                document.getElementById("timelinePopup").style.display = "none";
+            }
         }
 
         // Muestra/oculta detalles adicionales en los eventos de la línea del tiempo
@@ -533,6 +832,54 @@
                 extra.style.display = (extra.style.display === "block") ? "none" : "block";
             }
         }
+
+        const translations = {
+            es: {
+                close: "Cerrar",
+                back: "Volver Atrás",
+                timelineTitle: "Línea del Tiempo",
+                clickForInfo: "+ Click para Info",
+                detailsTitle: "Detalles de la Facultad",
+                galleryTitle: "Haz clic en las imágenes para descubrir más.",
+                locationsTitle: "Diferentes Ubicaciones de la Facultad a lo Largo del Tiempo"
+            },
+            en: {
+                close: "Close",
+                back: "Go Back",
+                timelineTitle: "Timeline",
+                clickForInfo: "+ Click for Info",
+                detailsTitle: "Faculty Details",
+                galleryTitle: "Click on the images to discover more.",
+                locationsTitle: "Different Locations of the Faculty Over Time"
+            }
+        };
+
+        let currentLang = 'es'; // Por defecto
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            currentLanguage = lang;
+
+            document.querySelector('.lang.es').style.display = lang === 'es' ? 'block' : 'none';
+            document.querySelector('.lang.en').style.display = lang === 'en' ? 'block' : 'none';
+
+            // Reabrimos el popup si estaba abierto
+            const popup = document.getElementById("popup");
+            const currentInfo = popup.getAttribute("data-info");
+            if (popup.style.display === "flex" && currentInfo) {
+                openPopup(currentInfo);
+            }
+        }
+        function openPopup(info, imageSrc) {
+            const content = currentLanguage === 'en' ? popupContent_en : popupContent_es;
+            console.log(`Abriendo popup: ${info} en idioma: ${currentLanguage}`);
+
+            document.getElementById("popup").setAttribute("data-info", info);
+            document.getElementById("popupImage").src = imageSrc || "";
+            document.getElementById("popupContent").innerHTML = content[info] || "<p>Información no disponible</p>";
+            document.getElementById("popup").style.display = "flex";
+        }
+                
     </script>
 
 </body>
