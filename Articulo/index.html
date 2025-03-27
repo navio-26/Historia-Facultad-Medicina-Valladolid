@@ -310,7 +310,6 @@
         <div class="header-container">
             <div class="header-text">
                 <h1>Historia de la Facultad de Medicina</h1>
-                <h3>Haz clic en las imágenes para descubrir más.</h3>
             </div>
             <!-- <img src="imagenes/logo_medicina.jpg" alt="Logo Facultad de Medicina" class="header-logo-medicina"> -->
         </div>
@@ -321,7 +320,7 @@
 </div>
     <!-- Contenedor principal -->
     <div class="container">
-        <h2>Detalles de la Facultad</h2>
+        <h2>Haz Click en las imágenes para saber más</h2>
 
         <!-- Galería principal -->
         <div class="image-container" id="subImages">
@@ -478,7 +477,6 @@
     <div class="header-container">
         <div class="header-text">
             <h1>History of the Faculty of Medicine</h1>
-            <h3>Click on the images to discover more.</h3>
         </div>
         <!-- <img src="imagenes/logo_medicina.jpg" alt="Faculty of Medicine Logo" class="header-logo-medicina"> -->
     </div>
@@ -490,7 +488,7 @@
     </div>
 <!-- Main container -->
 <div class="container">
-    <h2>Faculty Details</h2>
+    <h2>Click on the images to learn more</h2>
 
     <!-- Main gallery -->
     <div class="image-container" id="subImages_en">
@@ -659,9 +657,15 @@
 
         // Vuelve a la vista principal de imágenes
         function goBack() {
-            document.getElementById("subImages1").style.display = "none";
-            document.getElementById("subImages").style.display = "flex";
+            if (currentLanguage === 'en') {
+                document.getElementById("subImages1_en").style.display = "none";
+                document.getElementById("subImages_en").style.display = "flex";
+            } else {
+                document.getElementById("subImages1").style.display = "none";
+                document.getElementById("subImages").style.display = "flex";
+            }
         }
+
         function setLanguage(lang) {
             currentLanguage = lang;
             closePopup(); // Cerramos el popup si estaba abierto para actualizar idioma
@@ -729,7 +733,19 @@
                 info4: `
                     <h2>Anécdotas y Tradiciones</h2>
                     <img src="imagenes/medicina-sin.png" alt="Anécdotas" class="popup-extra-img">
-                    <p>La golondrina común es un ave de campo abierto...</p>`
+                    <h3>La Percha de los Albinos:</h3>
+<p>En una ocasión, la reina Isabel II decidió hacer una visita guiada al Museo Anatómico, a cargo de “Salvino Sierra”. Cuando entraron, el doctor se percató de que una de las maquetas, usada para estudiar el cuerpo masculino a escala real, tenía las partes íntimas al descubierto. Como le pareció que la reina podría considerarlo indecente, rápidamente colgó allí su sombrero (pues el doctor era un hombre bastante bajito) a modo de percha, dando así nombre a esta curiosa anécdota de la Facultad.
+</p>
+
+
+<h3>El patrón:</h3> 
+<p>Todas las facultades tienen un santo asignado como patrón, y en el caso de Medicina, este no es otro que San Lucas, cuyo día es el veinticuatro de octubre. En el pasado, como era habitual, era una ocasión no solo festiva, sino también caótica y alocada. Hoy en día, la fiesta se sigue celebrando; eso sí, con más sosiego.</p>
+
+<h3>El hombre de rostro falso:</h3>
+<p>De entre todos los médicos ilustres que se han formado en la Facultad, uno de los nombres que más destacan es sin duda el de Luis de Mercado, médico de cámara de Felipe II. Por ello, se encargó la fabricación de un busto en su honor. Solo había un problema; nadie sabía cómo lucía el hombre en cuestión, dada la ausencia de retratos contemporáneos. Por ello, el escultor decidió retratarlo con las facciones de un hombre de la misma época… convirtiendo a Luis de Mercado en Miguel de Cervantes.</p>
+
+<h3>Félix Rodríguez de la Fuente:</h3>
+<p>Celebérrimo naturalista español, así como creador de famosos documentales de divulgación sobre la vida salvaje, poca gente sabe que el burgalés estudió en la Facultad de Medicina de Valladolid; lo que es más, incluso llegó a graduarse en la misma, todo por consejo de su padre.</p>`
             };
 
         const popupContent_en = {
@@ -785,7 +801,19 @@
             info4: `
                 <h2>Anecdotes and Traditions</h2>
                 <img src="imagenes/medicina-sin.png" alt="Anecdotes" class="popup-extra-img">
-                <p>The common swallow is a bird of open fields... [Add actual English version here if you want to replace the placeholder]</p>`
+                <h3>La Percha de los Albinos:</h3>
+<p>On one occasion, Queen Isabella II decided to take a guided tour of the Anatomical Museum, led by “Salvino Sierra”. When they entered, the doctor noticed that one of the life-sized male body models had its private parts uncovered. Fearing the queen might find it indecent, he quickly hung his hat there (as the doctor was quite short), using it as a makeshift coat hook—thus giving name to this curious anecdote from the Faculty.
+</p>
+
+
+<h3>The Patron:</h3> 
+<p>Every faculty has a saint assigned as its patron, and in the case of Medicine, it's none other than Saint Luke, whose day is celebrated on the twenty-fourth of October. In the past, as was customary, it was an occasion not only festive but also chaotic and wild. Today, the celebration continues—albeit in a more subdued manner.</p>
+
+<h3>The Man with the Fake Face:</h3>
+<p>Among all the distinguished doctors trained at the Faculty, one of the most notable names is undoubtedly Luis de Mercado, personal physician to King Philip II. Because of this, a bust was commissioned in his honor. There was only one problem: no one knew what the man actually looked like, as no contemporary portraits existed. So, the sculptor decided to give him the features of another man from the same era… turning Luis de Mercado into Miguel de Cervantes.</p>
+
+<h3>Félix Rodríguez de la Fuente:</h3>
+<p>A famous Spanish naturalist and creator of iconic wildlife documentaries, few people know that the man from Burgos studied at the Faculty of Medicine in Valladolid. What’s more, he even graduated from it—entirely on his father’s recommendation.</p>`
         };
                
         // Paso 4: Modificamos openPopup para que use el idioma actual
